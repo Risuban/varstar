@@ -4,9 +4,11 @@ from .pondering import proximity_ponderation,outlier_ponderation
 from math import pi
 
 def trigono_plus_lineal(A,t):
+    #Declares an equiation to model the behavior of the star
     return A[0]*np.cos(A[2]*t)+A[1]*np.sin(A[2]*t)+A[3]+A[4]*t
 
 def error_function(A,t,y,w):
+    #Returns the error of the function
     return (trigono_plus_lineal(A,t)-y)*w
 
 def jac_errfunc(A,t,y,w):
@@ -19,6 +21,7 @@ def jac_errfunc(A,t,y,w):
     return jac_err*w
 
 def fit(data,cycles_guess=2.0):
+    #Fits the funtion to the points while mainting least error
     data= np.array(data)
     xdata= data[:,0]
     ydata= data[:,1]

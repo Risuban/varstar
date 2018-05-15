@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def plot(points,res=256):
+    #plots each point with it's ponderation, and the function
     fig, ax1 = plt.subplots()
 
     points= np.array(points)
